@@ -1,0 +1,17 @@
+.sidebar{
+    color: white;
+    background-color: #202020;
+    height: 800px;
+    box-shadow: 1px 1px 4px 2px lightslategrey;
+    padding-top: 16px;
+    padding-left: 10px;
+    
+    
+}
+.list-item{
+    color: white;
+    padding: 16px 8px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

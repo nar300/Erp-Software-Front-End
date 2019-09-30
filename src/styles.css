@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+body{
+    background-color: rgb(204, 208, 211);
+}
+
+.whitepanel{
+background-color: white;
+padding:8px;
+box-shadow: 1px 1px 1px   lightgrey;
+border:1px 1px 1px grey;
+
+}
