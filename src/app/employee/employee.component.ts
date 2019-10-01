@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
 import { Employee } from '../Models/Employee';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-employee',
@@ -10,22 +11,34 @@ import { Employee } from '../Models/Employee';
 export class EmployeeComponent implements OnInit {
 
   EmpList:Employee[]=[];
+  dtTrigger: Subject<Employee> = new Subject();
 
+  
   constructor(private service:CommonService) { }
-
+  dtOptions: DataTables.Settings = {};
   ngOnInit() {
     this.Getrecords();
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10
+    };
+
   }
 
   Getrecords(){
     this.service.getAll().subscribe(res=>{
       console.log(res);
       this.EmpList=res;
-      
+      this.dtTrigger.next();
 
     },
     error=>console.log(error)
     
     )
+  }
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
   }
 }
