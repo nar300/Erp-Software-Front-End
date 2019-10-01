@@ -12,3 +12,7 @@ box-shadow: 1px 1px 1px   lightgrey;
 border:1px 1px 1px grey;
 
 }
+.tablehead{
+    background-color: #00ACED;
+    color:white;
+}

@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CommonService {
+export class CommonService <T> {
 
   
 
@@ -18,8 +18,14 @@ export class CommonService {
   }
 
   public getAll(){
-    return this.http.get<Employee[]>(environment.ServerUrl+'Employees').pipe
+    return this.http.get<T[]>(environment.ServerUrl+'Employees').pipe
     (catchError(this.handleError));
+  }
+
+  public getById(id){
+    return this.http.get<T>(environment.ServerUrl+"Employees/"+id).pipe
+    (catchError(this.handleError));
+
   }
 
 

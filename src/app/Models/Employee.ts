@@ -1,23 +1,23 @@
-export interface Employee {
+export class Employee {
     
     
-        id: number,
-        firstName: string,
-        lastName: string,
-        phoneNumber: number,
-        email: string,
-        niNumber: string,
-        gender: string,
-        dateofBirth: string,
-        maritalStatus: string,
-        employeeType: string,
-        dateofJoin: string,
-        modeofRecruitment: string,
-        status: string,
-        education: string,
-        experience: string,
-        createdTime: string,
-        attendances: []
+     public   id: number;
+     public  firstName: string;
+     public  lastName: string;
+     public  phoneNumber: number;
+     public  email: string;
+     public  niNumber: string;
+     public  gender: string;
+     public  dateofBirth: string;
+     public maritalStatus: string;
+     public employeeType: string;
+     public dateofJoin: string;
+     public modeofRecruitment: string;
+     public status: string;
+     public education: string;
+     public  experience: string;
+     public  createdTime: string;
+     public attendances: []
           
           
           

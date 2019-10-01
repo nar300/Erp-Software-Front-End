@@ -14,7 +14,7 @@ export class EmployeeComponent implements OnInit {
   dtTrigger: Subject<Employee> = new Subject();
 
   
-  constructor(private service:CommonService) { }
+  constructor(private service:CommonService<Employee>) { }
   dtOptions: DataTables.Settings = {};
   ngOnInit() {
     this.Getrecords();

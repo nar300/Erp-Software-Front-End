@@ -30,7 +30,8 @@
                          <td>{{item.phoneNumber}}</td>
                          <td>{{item.status}}</td>
                          <td>{{item.createdTime}}</td>
-                         <td><button type="button" class="btn btn-outline-primary">Detail</button></td>
+                         <td> <button type="button"  [routerLink]="[ '/employee/', item.id ]"  class="btn btn-outline-primary">Detail</button></td>
+                        
                      </tr>
                     
                  </tbody>
