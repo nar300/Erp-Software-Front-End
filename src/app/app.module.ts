@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { DataTablesModule } from 'angular-datatables';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     SidebarComponent,
     DashboardComponent,
     EmployeeComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,

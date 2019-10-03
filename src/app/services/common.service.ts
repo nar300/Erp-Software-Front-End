@@ -29,6 +29,11 @@ export class CommonService <T> {
   }
 
 
+  public createEmployee(body){
+    return this.http.post(environment.ServerUrl+'Employees/',body).pipe
+    (catchError(this.handleError));
+
+  }
 
 
 
