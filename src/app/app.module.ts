@@ -17,6 +17,7 @@ import { DepartmentformComponent } from './departmentform/departmentform.compone
 import { DeignationComponent } from './deignation/deignation.component';
 import { DesignationformComponent } from './designationform/designationform.component';
 import { UpdateDepartmentComponent } from './update-department/update-department.component';
+import { UpdatedesignationComponent } from './updatedesignation/updatedesignation.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UpdateDepartmentComponent } from './update-department/update-department
     DepartmentformComponent,
     DeignationComponent,
     DesignationformComponent,
-    UpdateDepartmentComponent
+    UpdateDepartmentComponent,
+    UpdatedesignationComponent
   ],
   imports: [
     BrowserModule,

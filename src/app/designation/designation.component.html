@@ -25,7 +25,7 @@
                                             
                                             <td>{{item.jobTitle}}</td>
                                             <td>{{item.division}}</td>
-                                            <td> <button type="submit" class="btn btn-primary">Update</button> </td>
+                                            <td> <button type="submit"  [routerLink]="[ '/updatedesignation/', item.id ]" class="btn btn-primary">Update</button> </td>
                                             <td> <button type="submit" (click)="dsgDelete(item.id)" class="btn btn-danger">Delete</button> </td>
                                          
                                         </tr>
