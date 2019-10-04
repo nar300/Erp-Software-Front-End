@@ -14,6 +14,9 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { DepartmentComponent } from './department/department.component';
 import { DesignationComponent } from './designation/designation.component';
 import { DepartmentformComponent } from './departmentform/departmentform.component';
+import { DeignationComponent } from './deignation/deignation.component';
+import { DesignationformComponent } from './designationform/designationform.component';
+import { UpdateDepartmentComponent } from './update-department/update-department.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { DepartmentformComponent } from './departmentform/departmentform.compone
     EmployeeFormComponent,
     DepartmentComponent,
     DesignationComponent,
-    DepartmentformComponent
+    DepartmentformComponent,
+    DeignationComponent,
+    DesignationformComponent,
+    UpdateDepartmentComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
             <h4 >Departments</h4>
             <div class="row">
                 <div class="col-lg">
-                    <button type="button" class="btn btn-success right ">Add Departments</button>
+                    <button type="button"  [routerLink]="[ '/departmentform' ]" class="btn btn-success right ">Add Departments</button>
                 </div>
             </div>
             <div class="row mt-5">
@@ -23,7 +23,7 @@
                                     <tr *ngFor="let item of dptList" >
                                         
                                         <td>{{item.departmentName}}</td>
-                                        <td> <button type="submit" class="btn btn-primary">Update</button> </td>
+                                        <td> <button type="submit"  [routerLink]="[ '/updatedepartment/', item.id ]" class="btn btn-primary">Update</button> </td>
                                         <td> <button type="submit" (click)="dptDelete(item.id)" class="btn btn-danger">Delete</button> </td>
                                      
                                     </tr>

@@ -14,4 +14,11 @@ export class DesignatonService {
   getallDsg(){
     return this.http.get<Designation[]>(environment.ServerUrl+'Designations')
   }
+  deleteDesignation(id){
+    return this.http.delete(environment.ServerUrl+'Designations/'+id)
+  }
+
+  cerateDesignation(body){
+    return this.http.post<Designation>(environment.ServerUrl+'Designations',body)
+  }
 }
