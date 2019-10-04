@@ -16,3 +16,6 @@ border:1px 1px 1px grey;
     background-color: #00ACED;
     color:white;
 }
+.right{
+    float: right;
+}

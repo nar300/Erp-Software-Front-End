@@ -15,4 +15,8 @@ export class DepartmentService {
   getDepartment(){
     return this.http.get<Department[]>(environment.ServerUrl+'Departments')
   }
+  deleteDepartment(id){
+    return this.http.delete(environment.ServerUrl+'Departments/'+id)
+
+  }
 }

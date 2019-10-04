@@ -37,6 +37,17 @@ export class EmployeeComponent implements OnInit {
     )
   }
 
+  deleteEmployee(id){
+    console.log(id)
+    this.service.empDelete(id).subscribe(res=>{
+      console.log(res);
+      this.EmpList = this.EmpList.filter(item=>item.id != id)
+      
+    },
+    err=>console.log(err))
+
+  }
+
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();

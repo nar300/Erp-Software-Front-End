@@ -1,7 +1,7 @@
 export class Department{
     
-  private   id:number;
-  private   departmentName:string
+  public   id:number;
+  public   departmentName:string
 
   public get getid(){
       return this.id

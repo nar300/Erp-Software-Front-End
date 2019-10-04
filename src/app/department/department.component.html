@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row whitepanel mt-5">
+        <div class="col-lg ">
+            <h4 >Departments</h4>
+            <div class="row">
+                <div class="col-lg">
+                    <button type="button" class="btn btn-success right ">Add Departments</button>
+                </div>
+            </div>
+            <div class="row mt-5">
+                    <div class="col-lg">
+                            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped mt-5" >
+                                    <thead>
+                                    <tr>
+                                       
+                                        <th>Department Name</th>
+                                    <th></th>
+                                    <th></th>
+                                
+                                    </tr>
+                                </thead>
+                                    <tbody>  
+                                    <tr *ngFor="let item of dptList" >
+                                        
+                                        <td>{{item.departmentName}}</td>
+                                        <td> <button type="submit" class="btn btn-primary">Update</button> </td>
+                                        <td> <button type="submit" (click)="dptDelete(item.id)" class="btn btn-danger">Delete</button> </td>
+                                     
+                                    </tr>
+                                </tbody>
+                                </table>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>

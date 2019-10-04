@@ -11,6 +11,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { DataTablesModule } from 'angular-datatables';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { DepartmentComponent } from './department/department.component';
+import { DesignationComponent } from './designation/designation.component';
+import { DepartmentformComponent } from './departmentform/departmentform.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
     DashboardComponent,
     EmployeeComponent,
     EmployeeDetailsComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    DepartmentComponent,
+    DesignationComponent,
+    DepartmentformComponent
   ],
   imports: [
     BrowserModule,

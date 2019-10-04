@@ -20,6 +20,7 @@
                          <th>Status</th>
                          <th>Date</th>
                          <th></th>
+                         <th></th>
                      </tr>
                  </thead>
                  <tbody>
@@ -27,12 +28,13 @@
                      <tr *ngFor="let item of EmpList">
                          <td scope="row">{{item.firstName}} {{item.lastName}}</td>
                          <td>{{item.designation.jobTitle}}</td>
-                         
+
                          <td>{{item.email}}</td>
                          <td>{{item.phoneNumber}}</td>
                          <td>{{item.status}}</td>
                          <td>{{item.createdTime}}</td>
-                         <td> <button type="button"  [routerLink]="[ '/employee/', item.id ]"  class="btn btn-outline-primary">Detail</button></td>
+                         <td> <button type="submit"  [routerLink]="[ '/employee/', item.id ]"  class="btn btn-outline-primary">Detail</button></td>
+                         <td> <button type="submit"  (click)="deleteEmployee(item.id)"  class="btn btn-outline-danger">Delete</button></td>
                         
                      </tr>
                     

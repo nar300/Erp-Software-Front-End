@@ -35,6 +35,10 @@ export class CommonService <T> {
 
   }
 
+  public empDelete(id){
+    return this.http.delete(environment.ServerUrl+'Employees/'+id).pipe
+    (catchError(this.handleError));
+  }
 
 
 
