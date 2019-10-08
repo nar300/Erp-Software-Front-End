@@ -10,12 +10,16 @@ import { DepartmentformComponent } from './departmentform/departmentform.compone
 import { DesignationformComponent } from './designationform/designationform.component';
 import { UpdateDepartmentComponent } from './update-department/update-department.component';
 import { UpdatedesignationComponent } from './updatedesignation/updatedesignation.component';
+import { UpdateemployeeComponent } from './updateemployee/updateemployee.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { SalaryComponent } from './salary/salary.component';
 
 
 const routes: Routes = [
   {path:"",component:DashboardComponent},
   {path:'employee',component:EmployeeComponent},
   {path:'employee/:id',component:EmployeeDetailsComponent},
+  {path:'updateemployee/:id',component:UpdateemployeeComponent},
   {path:'employeeform',component:EmployeeFormComponent},
   {path:'department',component:DepartmentComponent},
   {path:'designation',component:DesignationComponent},
@@ -23,7 +27,9 @@ const routes: Routes = [
   {path:'departmentform',component:DepartmentformComponent},
  
   {path:'designationform',component:DesignationformComponent},
-  {path:'updatedesignation/:id',component:UpdatedesignationComponent}
+  {path:'updatedesignation/:id',component:UpdatedesignationComponent},
+  {path:'attendance',component:AttendanceComponent},
+  {path:'salary',component:SalaryComponent}
 
   
 ];

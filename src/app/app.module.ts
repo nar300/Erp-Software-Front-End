@@ -18,6 +18,9 @@ import { DeignationComponent } from './deignation/deignation.component';
 import { DesignationformComponent } from './designationform/designationform.component';
 import { UpdateDepartmentComponent } from './update-department/update-department.component';
 import { UpdatedesignationComponent } from './updatedesignation/updatedesignation.component';
+import { UpdateemployeeComponent } from './updateemployee/updateemployee.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { SalaryComponent } from './salary/salary.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { UpdatedesignationComponent } from './updatedesignation/updatedesignatio
     DeignationComponent,
     DesignationformComponent,
     UpdateDepartmentComponent,
-    UpdatedesignationComponent
+    UpdatedesignationComponent,
+    UpdateemployeeComponent,
+    AttendanceComponent,
+    SalaryComponent
   ],
   imports: [
     BrowserModule,

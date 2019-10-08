@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  isOpened =false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  openList(){
+    this.isOpened=!this.isOpened;
+  }
 }

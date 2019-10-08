@@ -1,3 +1,5 @@
+import { Attendance } from './Attendace';
+
 export class Employee {
     
     
@@ -12,12 +14,20 @@ export class Employee {
      public maritalStatus: string;
      public employeeType: string;
      public dateofJoin: string;
+     public departmentId: number;
+     public designationId: number;
+    
      public modeofRecruitment: string;
      public status: string;
      public education: string;
      public  experience: string;
      public  createdTime: string;
-     public attendances: []
+     public attendances: Attendance[];
+     public homeAddress:string;
+     public city:string;
+     public town:string;
+     public postCode:string;
+     
           
           
           

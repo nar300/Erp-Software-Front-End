@@ -56,7 +56,7 @@ dsgList:Designation[]=[];
     dateofJoin:['',Validators.required],
     education:['',Validators.required],
     experience:['',Validators.required],
-    departmentId:['',Validators.required],
+    departmentId:[0,Validators.required],
     designationId:['',Validators.required],
     homeAddress:['',Validators.required],
     city:['',Validators.required],

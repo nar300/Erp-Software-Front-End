@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class EmployeeDetailsComponent implements OnInit {
 
  Id=0;
+ 
  EmpDetail:Employee = new Employee();
   constructor(private service:CommonService<Employee>,
     private route:ActivatedRoute) { }

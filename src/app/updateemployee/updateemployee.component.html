@@ -1,0 +1,195 @@
+<div class="container mt-5">
+    <div class="row whitepanel ">
+        <div class="col-lg mt-5">
+            <h4>Update Employee </h4>
+            <hr>
+            <form [formGroup]="employeeupdateform" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-lg-6">
+
+
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" class="form-control" formControlName="firstName" id=""
+                                placeholder="First Name">
+                            <div *ngIf="!fName.valid && fName.touched" class="alert alert-danger">First Name Required
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastName" id="lastName"
+                                placeholder="Last Name">
+                            <div *ngIf="!lName.valid && lName.touched" class="alert alert-danger">Last Name Required
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mobile Number</label>
+                            <input type="number" class="form-control" formControlName="phoneNumber" id="phoneNumber"
+                                placeholder="Phone Number">
+                            <div *ngIf="!fNumber.valid && fNumber.touched" class="alert alert-danger">First Name
+                                Required</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Email Address</label>
+                            <input type="text" class="form-control" formControlName="email" id="email"
+                                placeholder="Email ">
+                            <div *ngIf="!mail.valid && mail.touched" class="alert alert-danger">Last Name Required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ni Number</label>
+                            <input type="text" class="form-control" formControlName="niNumber" id="niNumber"
+                                placeholder="Ni Number">
+                            <div *ngIf="!ni.valid && ni.touched" class="alert alert-danger">First Name Required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Education</label>
+                            <input type="text" class="form-control" formControlName="education" id="education"
+                                placeholder="Education">
+                            <div *ngIf="!edu.valid && edu.touched" class="alert alert-danger">First Name Required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Experience</label>
+                            <input type="text" class="form-control" formControlName="experience" id="experience"
+                                placeholder="Experience">
+                            <div *ngIf="!exp.valid && exp.touched" class="alert alert-danger">First Name Required</div>
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <label for="">Department</label>
+                            <select class="form-control" formControlName="departmentId" id="department">
+                               
+                                <option *ngFor="let item of dptList" value={{item.id}}>{{item.departmentName}}</option>
+
+                            </select>
+                            <div *ngIf="!dpt.valid && dpt.touched" class="alert alert-danger">Department required</div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="">Designation</label>
+                            <select class="form-control" formControlName="designationId" id="designation">
+                               
+                                <option *ngFor="let dsg of dsgList" value={{dsg.id}}>{{dsg.jobTitle}}</option>
+                            </select>
+                            <div *ngIf="!desg.valid && desg.touched" class="alert alert-danger">Designation is mandatory
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <!-- ---- -->
+                    <div class="col-lg-6">
+
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" formControlName="gender" id="gender"
+                                    value="Male">
+                                Male
+                            </label>
+
+                        </div>
+
+                        <div class="form-check form-check-inline">
+
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" formControlName="gender" id="gender"
+                                    value="Female"> Female
+                            </label>
+                            <div *ngIf="!gend.valid && gend.touched" class="alert alert-danger">Select Gender</div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="">Date of Birth</label>
+                            <input type="text" class="form-control" formControlName="dateofBirth" id=""
+                                placeholder="D.O.B">
+                            <div *ngIf="!dob.valid && dob.touched" class="alert alert-danger">D.O.B Required</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Marital Status</label>
+                            <select class="form-control" formControlName="maritalStatus" id="maritalStatus">
+                                <option value="Married">Married</option>
+                                <option value="Single">Single</option>
+                                <option value="Un Married">Un Married</option>
+                            </select>
+                            <div *ngIf="!mstatus.valid && mstatus.touched" class="alert alert-danger">Please choose
+                                Marital
+                                Staus</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Employee Type</label>
+                            
+                            <select class="form-control" formControlName="employeeType" id="employeeType">
+                               
+                                <option *ngFor="let emp of empList" value={{emp.employeeType}}>{{emp.employeeType}}</option>
+                            </select>
+                            <div *ngIf="!emptype.valid && emptype.touched" class="alert alert-danger">Please choose
+                                Employee
+                                Type</div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="">Date of Join</label>
+                            <input type="text" class="form-control" formControlName="dateofJoin" id="dateofJoin"
+                                placeholder="Date of Join ">
+                            <div *ngIf="!dfj.valid && dfj.touched" class="alert alert-danger">Date of Join Required
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Home Address</label>
+                            <input type="text" class="form-control" formControlName="homeAddress" id="homeAddress"
+                                placeholder="Address">
+                            <div *ngIf="!Address.valid && Address.touched" class="alert alert-danger">Address Required
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">City</label>
+                            <input type="text" class="form-control" formControlName="city" id="city" placeholder="City">
+                            <div *ngIf="!ct.valid && ct.touched" class="alert alert-danger">City Required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Town </label>
+                            <input type="text" class="form-control" formControlName="town" id="town" placeholder="Town">
+                            <div *ngIf="!tow.valid && tow.touched" class="alert alert-danger">Town Required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Post Code</label>
+                            <input type="text" class="form-control" formControlName="postCode" id="postCode"
+                                placeholder="Zip code">
+                            <div *ngIf="!zip.valid && zip.touched" class="alert alert-danger">Postal code Required</div>
+                        </div>
+
+
+
+
+                        <button type="submit" class="btn btn-block btn-primary">Update
+                            Record</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

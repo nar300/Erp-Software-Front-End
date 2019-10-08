@@ -1,52 +1,51 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Employee } from '../Models/Employee';
-import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { Attendance } from './Models/Attendace';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommonService <T> {
+export class AttendaceService {
 
-  
+  constructor(private http:HttpClient) { }
 
-  constructor(private http:HttpClient)
-   { 
+  createAttendance(body){
 
-  }
-
-  public  getAll(){
-    return this.http.get<T[]>(environment.ServerUrl+'Employees').pipe
-    (catchError(this.handleError));
-  }
-
-  public getById(id){
-    return this.http.get<T>(environment.ServerUrl+"Employees/"+id).pipe
-    (catchError(this.handleError));
+    return this.http.post(environment.ServerUrl+'Attendances',body).pipe(
+      catchError(this.handleError)
+    )
 
   }
 
-
-  public createEmployee(body){
-    return this.http.post(environment.ServerUrl+'Employees/',body).pipe
-    (catchError(this.handleError));
-
+  attendanceGetById(id){
+    return this.http.get<Attendance>(environment.ServerUrl+'Attendances'+id).pipe(
+      catchError(this.handleError)
+    )
   }
 
-  public empDelete(id){
-    return this.http.delete(environment.ServerUrl+'Employees/'+id).pipe
-    (catchError(this.handleError));
+  getAllAttendance(){
+    return this.http.get<Attendance[]>(environment.ServerUrl+'Attendances').pipe(
+      catchError(this.handleError)
+    )
   }
 
- 
-  
-  public empUpdate(id,body){
-    return this.http.put(environment.ServerUrl+'Employees/'+id,body).pipe
-    (catchError(this.handleError));
-
+  deleteAttendance(id){
+    return this.http.delete(environment.ServerUrl+'Attendances').pipe(
+      catchError(this.handleError)
+    )
   }
+
+
+
+
+
+
+
+
+
 
 
 

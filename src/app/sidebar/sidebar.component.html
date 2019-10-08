@@ -1,29 +1,63 @@
 <div class="sidebar">
-<h4>Dashboard</h4>
-<ul class="list-group">
-  <div class="list-me">
-     <div class="list-item">
-            <div class="sidebaritem-txt">
-                    <i class="fa fa-tasks fa3x"></i>
-                    Human Resource
-            </div>
-            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-     </div>
-
-        <div class="nested-list">
-            <ul>
-               
-               <li> <a [routerLink]="[ '/employee']">Employee</a> </li>
-                <li><a [routerLink]="[ '/department']">Department</a></li>
-                <li><a [routerLink]="[ '/designation']">Designation</a></li>
-                
-
-               
-            </ul>
+  <h4>Dashboard</h4>
+  <ul class="list-group">
+    <div class="list-me">
+      <div (click)="openList()" class="list-item">
+        <div class="sidebaritem-txt">
+          <i  class="fa fa-tasks fa3x"></i>
+          Human Resource
         </div>
-  </div>  
+        <i *ngIf="!isOpened" class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+        <i *ngIf="isOpened" class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
+      </div>
 
-</ul>
+      <div *ngIf="isOpened" class="nested-list">
+        <ul>
+          <div class="list-item" [routerLink]="[ '/employee']">
+            <div class="sidebaritem-txt">
+              <i class="fa fa-users fa3x"></i>
+              Employee
+            </div>
+          </div>
+
+          <div class="list-item" [routerLink]="[ '/department']">
+            <div class="sidebaritem-txt">
+              <i class="fa fa-building-o fa3x"></i>
+              Department
+            </div>
+          </div>
+          
+          <div class="list-item" [routerLink]="[ '/designation']">
+            <div class="sidebaritem-txt">
+              <i class="fa fa-briefcase fa3x"></i>
+              Designation
+            </div>
+          </div>
+
+          <div class="list-item" [routerLink]="[ '/attendance']">
+            <div class="sidebaritem-txt">
+              <i class="fa fa-clock-o fa3x"></i>
+              Attendance
+            </div>
+          </div>
+
+          <div class="list-item" [routerLink]="[ '/salary']">
+            <div class="sidebaritem-txt">
+              <i class="fa fa-money fa3x"></i>
+              Salaries
+            </div>
+          </div>
+
+         
+
+
+
+        </ul>
+      </div>
+    </div>
+
+    
+  </ul>
 
 
 </div>

@@ -1,52 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Employee } from '../Models/Employee';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Salary } from './Models/Salary';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommonService <T> {
+export class SalaryService {
 
-  
+  constructor(private http:HttpClient) { }
 
-  constructor(private http:HttpClient)
-   { 
-
+  createSalary(body){
+    return this.http.post(environment.ServerUrl+'Salaries',body).pipe(
+       catchError(this.handleError)
+    )
   }
 
-  public  getAll(){
-    return this.http.get<T[]>(environment.ServerUrl+'Employees').pipe
-    (catchError(this.handleError));
+  getSalaryById(id){
+    return this.http.get<Salary>(environment.ServerUrl+'Salaries'+id).pipe(
+      catchError(this.handleError)
+    )
   }
 
-  public getById(id){
-    return this.http.get<T>(environment.ServerUrl+"Employees/"+id).pipe
-    (catchError(this.handleError));
+  getAllSalaries(){
+    return this.http.get<Salary[]>(environment.ServerUrl+'Salaries').pipe(
+      catchError(this.handleError)
+    )
+  }
 
+  deleteSalary(id){
+    return this.http.delete(environment.ServerUrl+'Salaries'+id).pipe(
+      catchError(this.handleError)
+    )
   }
 
 
-  public createEmployee(body){
-    return this.http.post(environment.ServerUrl+'Employees/',body).pipe
-    (catchError(this.handleError));
 
-  }
 
-  public empDelete(id){
-    return this.http.delete(environment.ServerUrl+'Employees/'+id).pipe
-    (catchError(this.handleError));
-  }
 
- 
-  
-  public empUpdate(id,body){
-    return this.http.put(environment.ServerUrl+'Employees/'+id,body).pipe
-    (catchError(this.handleError));
 
-  }
+
+
 
 
 
