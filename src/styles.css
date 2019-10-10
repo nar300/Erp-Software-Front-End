@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
 
 body{
     background-color: rgb(204, 208, 211);
@@ -10,6 +12,7 @@ background-color: white;
 padding:8px;
 box-shadow: 1px 1px 1px   lightgrey;
 border:1px 1px 1px grey;
+border-radius: 10px;
 
 }
 .tablehead{
@@ -18,4 +21,7 @@ border:1px 1px 1px grey;
 }
 .right{
     float: right;
+}
+.icon-color{
+    color: #00ACED;
 }

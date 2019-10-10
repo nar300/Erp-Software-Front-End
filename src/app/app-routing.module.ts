@@ -29,7 +29,8 @@ const routes: Routes = [
   {path:'designationform',component:DesignationformComponent},
   {path:'updatedesignation/:id',component:UpdatedesignationComponent},
   {path:'attendance',component:AttendanceComponent},
-  {path:'salary',component:SalaryComponent}
+  {path:'salary',component:SalaryComponent},
+  
 
   
 ];

@@ -28,7 +28,7 @@
                 <div class="col-lg-2  std-txt">
                     <h5>Job Title :</h5>
                 </div>
-                <div class="col-lg-3">{{EmpDetail.firstName}} </div>
+                <div class="col-lg-3">{{EmpDetail.designation.jobTitle}} </div>
             </div>
             <div class="row  ">
                 <div class="col-lg-2  std-txt">
@@ -174,7 +174,7 @@
                             <h4>Attendance</h4>
                     </div>
                 </div>
-            <table class="table table-stripped">
+            <table class="table table-stripped" *ngIf="!EmpDetail.attendances==[]">
                     <thead>
                         
                         <th>Date</th>

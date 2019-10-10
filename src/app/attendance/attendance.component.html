@@ -7,48 +7,73 @@
 
                     <div class="col-lg">
 
-                            <div class="form-group">
-                                    <label for="">Select Employee</label>
-                                    <select class="form-control" formControlName="employeeId" id="">
-                                        <option selected value="" disabled>Select</option>
-                                        <option *ngFor="let emp of empList" value={{emp.id}}>{{emp.firstName}}</option>
-                                          <div *ngIf="!empId.valid&& empId.touched" class="alert alert-danger">Please select an employee</div>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                  <label for="">Attendance Type</label>
-                                  <input type="text"
-                                    class="form-control" formControlName="type" id=""  placeholder="please enter hours">
-                                    <div *ngIf="!atType.valid&& atType.touched" class="alert alert-danger">please enter hours</div>
-                                </div>
+                        <div class="form-group">
+                            <label for="">Select Employee</label>
+                            <select class="form-control" formControlName="employeeId" id="">
+                                <option selected value="" disabled>Select</option>
+                                <option *ngFor="let emp of empList" value={{emp.id}}>{{emp.firstName}}</option>
+                                <div *ngIf="!empId.valid&& empId.touched" class="alert alert-danger">Please select an
+                                    employee</div>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Attendance Type</label>
+                            <input type="text" class="form-control" formControlName="type" id=""
+                                placeholder="please enter hours">
+                            <div *ngIf="!atType.valid&& atType.touched" class="alert alert-danger">please enter hours
+                            </div>
+                        </div>
 
-                                <button type="submit" [disabled]="!registerAttendance.valid"  class="btn btn-primary btn-lg btn-block">Save Attendance</button>    
+                        <button type="submit" [disabled]="!registerAttendance.valid"
+                            class="btn btn-primary btn-lg btn-block">Save Attendance</button>
 
                     </div>
                     <div class="col-lg">
 
                         <div class="form-group">
-                          <label for="">Calender</label>
-                          <input type="date"
-                            class="form-control" formControlName="date" id="date"  placeholder="select date">
+                            <label for="">Calender</label>
+                            <input type="date" class="form-control" formControlName="date" id="date"
+                                placeholder="select date">
                             <div *ngIf="!dt.valid && dt.touched" class="alert alert-danger">please enter hours</div>
                         </div>
 
                         <div class="form-group">
-                          <label for="">Description</label>
-                          <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
+                            <label for="">Description</label>
+                            <textarea class="form-control" formControlName="description" id="description"
+                                rows="3"></textarea>
                         </div>
 
 
                     </div>
                 </div>
 
-                
+
 
             </form>
         </div>
-       
 
-       
+
+
+    </div>
+
+    <div class="row whitepanel mt-5">
+        <div class="col-lg">
+            <div class="form-group">
+                <label for="">Select Employee</label>
+                <select (change)="onChange(emp.value)" #emp class="form-control"  id="">
+                    <option selected value="" disabled>Select</option>
+                    <option *ngFor="let emp of empList" value={{emp.id}}>{{emp.firstName}}</option>
+
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <!-- calender -->
+
+    <div class="row whitepanel ">
+        <div class="col-lg">
+            <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="eventList"  > </full-calendar>
+        </div>
     </div>
 </div>

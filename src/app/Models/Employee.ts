@@ -1,4 +1,5 @@
 import { Attendance } from './Attendace';
+import { Designation } from './Designation';
 
 export class Employee {
     
@@ -16,13 +17,14 @@ export class Employee {
      public dateofJoin: string;
      public departmentId: number;
      public designationId: number;
+     public designation :Designation
     
      public modeofRecruitment: string;
      public status: string;
      public education: string;
      public  experience: string;
      public  createdTime: string;
-     public attendances: Attendance[];
+     public attendances: Attendance[]=[];
      public homeAddress:string;
      public city:string;
      public town:string;

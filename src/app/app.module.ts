@@ -21,6 +21,9 @@ import { UpdatedesignationComponent } from './updatedesignation/updatedesignatio
 import { UpdateemployeeComponent } from './updateemployee/updateemployee.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { SalaryComponent } from './salary/salary.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ChartsModule } from 'ng2-charts';
+import { FullCalendarModule } from '@fullcalendar/angular'; 
 
 
 @NgModule({
@@ -40,7 +43,8 @@ import { SalaryComponent } from './salary/salary.component';
     UpdatedesignationComponent,
     UpdateemployeeComponent,
     AttendanceComponent,
-    SalaryComponent
+    SalaryComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import { SalaryComponent } from './salary/salary.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    ChartsModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

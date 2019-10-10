@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { CommonService } from '../services/common.service';
 import { Employee } from '../Models/Employee';
 import { Attendance } from '../Models/Attendace';
+import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
   selector: 'app-attendance',
@@ -14,6 +15,9 @@ export class AttendanceComponent implements OnInit {
 
   empList:Employee[]=[];
   atList:Attendance[]=[];
+  eventList:Event[]=[];
+
+  calendarPlugins = [dayGridPlugin];
 
   constructor(private service:AttendaceService,
     private fb:FormBuilder,
@@ -66,5 +70,28 @@ onSubmit(){
   })
 }
 
+onChange(value){
+  console.log(value)
+  this.empService.getById(value).subscribe(res=>{
+    console.log(res)
+   for (let i = 0; i < res.attendances.length; i++) {
+     const element = res.attendances[i];
+     let evt = {
+       title :element.Description,
+       date:element["date"].substr(0-10,1)
+     }
+     console.log(evt)
+     this.eventList.push(evt)
+   }
+  })
+}
 
+
+
+}
+
+
+export interface Event{
+  title:string;
+  date:string;
 }
