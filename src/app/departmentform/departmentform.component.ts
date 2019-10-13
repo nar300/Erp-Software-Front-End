@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DepartmentService } from '../services/department.service';
 import { Route, Router } from '@angular/router';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-departmentform',
@@ -13,6 +14,7 @@ export class DepartmentformComponent implements OnInit {
   
 
   constructor(private fb:FormBuilder ,private dptService:DepartmentService,
+    
     
    private router:Router
     ) { }
@@ -32,6 +34,8 @@ export class DepartmentformComponent implements OnInit {
   onSubmit(){
     this.dptService.createDepartment(this.dptRegister.value).subscribe(res=>{
       console.log(res);
+     
+     
       this.router.navigate(['department'])
     },
     err=>console.log(err))

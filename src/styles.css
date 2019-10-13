@@ -2,6 +2,7 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
+@import '~ngx-toastr/toastr';
 
 body{
     background-color: rgb(204, 208, 211);

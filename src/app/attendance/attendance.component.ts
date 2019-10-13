@@ -1,26 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AttendaceService } from '../attendace.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CommonService } from '../services/common.service';
 import { Employee } from '../Models/Employee';
 import { Attendance } from '../Models/Attendace';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { EventInput } from '@fullcalendar/core';
+import { FullCalendarComponent } from '@fullcalendar/angular';
+import { ToastrService } from 'ngx-toastr';
+import { NotificationService } from '../notification.service';
+
 
 @Component({
+  // providers:[ { provide: ToastrService, useClass: NotificationService}],
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
   styleUrls: ['./attendance.component.css']
+
 })
+
 export class AttendanceComponent implements OnInit {
 
   empList:Employee[]=[];
   atList:Attendance[]=[];
-  eventList:Event[]=[];
+  eventList:EventInput[]=[];
 
+  // @ViewChild('calendar') calendarComponent: FullCalendarComponent; // the #calendar in the template
+
+  calendarVisible = true;
   calendarPlugins = [dayGridPlugin];
+  calendarWeekends = true;
+
+  
 
   constructor(private service:AttendaceService,
-    private fb:FormBuilder,
+    private fb:FormBuilder,private toastr: NotificationService,
     private empService:CommonService<Employee>
     ) { }
 
@@ -35,7 +49,7 @@ export class AttendanceComponent implements OnInit {
   
     
     type:['',Validators.required],
-    description:[''],
+    description:['',Validators.required],
     date:['',Validators.required],
     employeeId:['',Validators.required],
 
@@ -67,6 +81,8 @@ getAll(){
 onSubmit(){
   this.service.createAttendance(this.registerAttendance.value).subscribe(res=>{
     console.log(res);
+    this.toastr.showSuccess('successfully added','notification')
+    this.registerAttendance.reset()
   })
 }
 
@@ -74,14 +90,16 @@ onChange(value){
   console.log(value)
   this.empService.getById(value).subscribe(res=>{
     console.log(res)
+    this.eventList =[];
    for (let i = 0; i < res.attendances.length; i++) {
      const element = res.attendances[i];
      let evt = {
-       title :element.Description,
-       date:element["date"].substr(0-10,1)
+       title :element["description"],
+       start:element['date']
      }
-     console.log(evt)
+     
      this.eventList.push(evt)
+     console.log(this.eventList)
    }
   })
 }

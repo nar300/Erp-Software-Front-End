@@ -24,6 +24,11 @@ import { SalaryComponent } from './salary/salary.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ChartsModule } from 'ng2-charts';
 import { FullCalendarModule } from '@fullcalendar/angular'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { NotificationService } from './notification.service';
+import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+
 
 
 @NgModule({
@@ -54,9 +59,14 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     HttpClientModule,
     DataTablesModule,
     ChartsModule,
-    FullCalendarModule
+    FullCalendarModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    PDFExportModule
+  
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

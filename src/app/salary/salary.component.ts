@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { CommonService } from '../services/common.service';
 import { Employee } from '../Models/Employee';
 import { SalaryService } from '../salary.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-salary',
@@ -15,7 +16,8 @@ export class SalaryComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
     private empService:CommonService<Employee>,
-    private salaryService:SalaryService
+    private salaryService:SalaryService,
+    private toastr:NotificationService
     
     ) { }
 
@@ -23,6 +25,7 @@ export class SalaryComponent implements OnInit {
     this.empService.getAll().subscribe(res=>{
       console.log(res)
      this.empList=res
+    
     })
   }
 
@@ -61,6 +64,8 @@ export class SalaryComponent implements OnInit {
 
     this.salaryService.createSalary(this.salaryform.value).subscribe(res=>{
      console.log(res)
+     this.toastr.showSuccess('successfully added','notification')
+     this.salaryform.reset()
     })
   }
 

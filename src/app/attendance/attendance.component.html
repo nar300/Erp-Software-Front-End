@@ -39,8 +39,9 @@
 
                         <div class="form-group">
                             <label for="">Description</label>
-                            <textarea class="form-control" formControlName="description" id="description"
-                                rows="3"></textarea>
+                            <textarea class="form-control" formControlName="description" id="description" 
+                                rows="3" placeholder="Eg: half day or Full day"></textarea>
+                                <div *ngIf="!desc.valid && desc.touched" class="alert alert-danger">please enter description</div>
                         </div>
 
 
@@ -72,7 +73,7 @@
     <!-- calender -->
 
     <div class="row whitepanel ">
-        <div class="col-lg">
+        <div *ngIf="eventList.length >0" class="col-lg">
             <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="eventList"  > </full-calendar>
         </div>
     </div>

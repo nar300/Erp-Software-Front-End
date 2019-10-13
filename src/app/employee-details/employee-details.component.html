@@ -174,7 +174,17 @@
                             <h4>Attendance</h4>
                     </div>
                 </div>
-            <table class="table table-stripped" *ngIf="!EmpDetail.attendances==[]">
+                <div class="row mt-2">
+                    <div class="col-lg"></div>
+                    <div class="col-lg"></div>
+                    <div class="col-lg"></div>
+                    <div class="col-lg">
+                        <button type="button" kendo-button (click)="pdf.saveAs('attendance.pdf')" class ="btn btn-secondary" >Export As pdf</button>
+                    </div>
+                </div>
+                <kendo-pdf-export #pdf paperSize="A4" margin="2cm">
+                    <h4>Attendace Report</h4>
+            <table class="table table-stripped mt-2" *ngIf="!EmpDetail.attendances==[]">
                     <thead>
                         
                         <th>Date</th>
@@ -182,15 +192,18 @@
                         <th>Description</th>
                 
                     </thead>
+                    
                     <tbody>
                         <tr *ngFor="let item of EmpDetail.attendances">
                             <td>{{item.date|date:'fullDate' }}</td>
                             <td>{{item.type}}</td>
                             <td>{{item.description}}</td>
                             
+                            
                         </tr>
                     </tbody>
                 </table>
+            </kendo-pdf-export>
                 
     </div>
 </div>
