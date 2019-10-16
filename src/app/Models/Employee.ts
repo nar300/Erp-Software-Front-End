@@ -1,5 +1,6 @@
 import { Attendance } from './Attendace';
 import { Designation } from './Designation';
+import { Payroll } from './Payroll';
 
 export class Employee {
     
@@ -29,6 +30,7 @@ export class Employee {
      public city:string;
      public town:string;
      public postCode:string;
+     public payRolls:Payroll[];
      
           
           

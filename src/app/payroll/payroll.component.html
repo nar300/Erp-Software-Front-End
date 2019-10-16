@@ -1,0 +1,43 @@
+
+<div class="row whitepanel mt-5">
+    <div class="col-lg">
+        <div class="form-group">
+          <label for="">Select Employee</label>
+          <select (click)="onClick(empid.value)" #empid class="form-control" name="" id="">
+              <option value="disabled" selected>Select</option>
+            <option *ngFor="let item of empList" value={{item.id}}>{{item.firstName}}</option>
+            
+          </select>
+        </div>
+   
+
+
+            <table class="table table-striped">
+                    <thead>
+                        <tr >
+                            <th>Employee Name</th>
+                            <!-- <th>Gross Salary</th> -->
+                            <th>Tax code </th>
+                            <th>Tax </th>
+                            <th>Ni Number </th>
+                            <th>Pension </th>
+                            <th>Gross Salary</th>
+                            <th>Month</th>
+                            <th>Net Salary</th>
+              
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of payList">
+                            <td>{{emp.firstName}}</td>
+                            <td>L1087</td>
+                            <td>{{item.tax}}</td>
+                            <td>{{item.nationalInsurance}}</td>
+                            <td>{{item.pension}}</td>
+                            <td>{{item.total}}</td>
+              
+                        </tr>
+                    </tbody>
+                  </table>
+       </div>
+   </div>

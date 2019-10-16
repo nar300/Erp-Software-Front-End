@@ -13,6 +13,8 @@ import { UpdatedesignationComponent } from './updatedesignation/updatedesignatio
 import { UpdateemployeeComponent } from './updateemployee/updateemployee.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { SalaryComponent } from './salary/salary.component';
+import { PayrollComponent } from './payroll/payroll.component';
+import { LeaveComponent } from './leave/leave.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,8 @@ const routes: Routes = [
   {path:'updatedesignation/:id',component:UpdatedesignationComponent},
   {path:'attendance',component:AttendanceComponent},
   {path:'salary',component:SalaryComponent},
+  {path:'payroll',component:PayrollComponent},
+  {path:'leave',component:LeaveComponent},
   
 
   

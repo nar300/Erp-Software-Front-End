@@ -28,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { NotificationService } from './notification.service';
 import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+import { PayrollComponent } from './payroll/payroll.component';
+import { LeaveComponent } from './leave/leave.component';
 
 
 
@@ -49,7 +51,9 @@ import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
     UpdateemployeeComponent,
     AttendanceComponent,
     SalaryComponent,
-    NavbarComponent
+    NavbarComponent,
+    PayrollComponent,
+    LeaveComponent
   ],
   imports: [
     BrowserModule,
