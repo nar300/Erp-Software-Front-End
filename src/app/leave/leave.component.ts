@@ -75,11 +75,11 @@ export class LeaveComponent implements OnInit {
     this.empservice.getById(value).subscribe(res=>{
       console.log(res)
       this.eventList =[];
-     for (let i = 0; i < res.attendances.length; i++) {
-       const element = res.attendances[i];
+     for (let i = 0; i < res.leaves.length; i++) {
+       const element = res.leaves[i];
        let evt = {
          title :element["description"],
-         start:element['date']
+         start:element['leaveFromDate']
        }
        
        this.eventList.push(evt)

@@ -1,6 +1,7 @@
 import { Attendance } from './Attendace';
 import { Designation } from './Designation';
 import { Payroll } from './Payroll';
+import { Leave } from './Leave';
 
 export class Employee {
     
@@ -26,6 +27,7 @@ export class Employee {
      public  experience: string;
      public  createdTime: string;
      public attendances: Attendance[]=[];
+     public leaves: Leave[]=[];
      public homeAddress:string;
      public city:string;
      public town:string;
